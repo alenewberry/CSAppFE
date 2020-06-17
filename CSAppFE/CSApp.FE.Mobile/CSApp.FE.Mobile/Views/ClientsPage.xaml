@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CSApp.FE.Mobile.Views.ClientsPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Clientes">
+    <ContentPage.Content>
+        <StackLayout
+            BindingContext="{Binding Clients}"
+            Padding="8">
+            <ListView
+                IsRefreshing="{Binding IsRefreshing}"
+                ItemsSource="{Binding Clients}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <StackLayout
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="Center">
+                                    <Label
+                                    	FontAttributes="Bold"
+                                        FontSize="Medium"
+                                        TextColor="Black"
+                                        Text="{Binding Name}">
+                                    </Label>
+                                    <Label
+                                        HorizontalOptions="Center"
+                                    	FontAttributes="None"
+                                        FontSize="Small"
+                                        TextColor="Navy"
+                                        Text="{Binding Cuit}">
+                                    </Label>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
