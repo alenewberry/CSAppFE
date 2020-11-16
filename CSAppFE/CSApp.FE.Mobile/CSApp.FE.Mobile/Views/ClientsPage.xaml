@@ -7,6 +7,12 @@
              x:Class="CSApp.FE.Mobile.Views.ClientsPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              Title="Clientes">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Icon = "ic_add"
+            Command="{Binding AddClientCommand}">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout
             BindingContext="{Binding Clients}"
@@ -18,23 +24,36 @@
                     <DataTemplate>
                         <ViewCell>
                             <Grid>
-                                <StackLayout
-                                    VerticalOptions="Center"
-                                    HorizontalOptions="Center">
-                                    <Label
-                                    	FontAttributes="Bold"
-                                        FontSize="Medium"
-                                        TextColor="Black"
-                                        Text="{Binding Name}">
-                                    </Label>
-                                    <Label
-                                        HorizontalOptions="Center"
-                                    	FontAttributes="None"
-                                        FontSize="Small"
-                                        TextColor="Navy"
-                                        Text="{Binding Cuit}">
-                                    </Label>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SelectClientCommand}"/>
+                                </Grid.GestureRecognizers>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                    <StackLayout
+                                        Grid.Column="0"
+                                        VerticalOptions="Center"
+                                        HorizontalOptions="Center">
+                                        <Label
+                                    	    FontAttributes="Bold"
+                                            FontSize="Medium"
+                                            TextColor="Black"
+                                            Text="{Binding Name}">
+                                        </Label>
+                                        <Label
+                                            HorizontalOptions="Center"
+                                    	    FontAttributes="None"
+                                            FontSize="Small"
+                                            TextColor="#5182f9"
+                                            Text="{Binding Cuit}">
+                                        </Label>
                                 </StackLayout>
+                                <Image
+    	                            Grid.Column="1"
+    	                            Source="ic_go">
+                                </Image>
+
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

@@ -6,12 +6,17 @@
              mc:Ignorable="d"
              x:Class="CSApp.FE.Mobile.Views.LoginPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             Title="Login">
+             Title="Iniciar Sesión">
     <ContentPage.Content>
         <ScrollView
             BindingContext="{Binding Login}">
             <StackLayout
-                Padding="8">
+                Padding="10">
+                <Image
+                	HeightRequest="150"
+                	Source="logocsmobile">
+                </Image>
+
                 <Label
                     Text="Email">                    
                 </Label>
@@ -28,10 +33,20 @@
                     Placeholder="Ingrese su contraseña"
                     Text="{Binding Password}">
                 </Entry>
+                <ActivityIndicator
+                	IsRunning="{Binding IsRunning}"
+                    VerticalOptions="CenterAndExpand">
+                </ActivityIndicator>
                 <Button
-                    Command="{Binding LoginCommand}"
-                    Text="Ingresar">                    
+                	BackgroundColor="#5182f9"
+                	BorderRadius="23"
+                	Command="{Binding LoginCommand}"
+                	HeightRequest="46"
+                	IsEnabled="{Binding IsEnabled}"
+                	Text="Ingresar"
+                	TextColor="White">
                 </Button>
+
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

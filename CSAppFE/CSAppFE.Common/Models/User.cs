@@ -9,13 +9,13 @@
         public long Serial { get; set; }
 
         [JsonProperty("cuit")]
-        public object Cuit { get; set; }
+        public string Cuit { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
 
         [JsonProperty("dueDate")]
-        public DateTimeOffset DueDate { get; set; }
+        public DateTime DueDate { get; set; }
 
         [JsonProperty("isActive")]
         public bool IsActive { get; set; }
@@ -48,7 +48,7 @@
         public Guid ConcurrencyStamp { get; set; }
 
         [JsonProperty("phoneNumber")]
-        public object PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
 
         [JsonProperty("phoneNumberConfirmed")]
         public bool PhoneNumberConfirmed { get; set; }
@@ -57,12 +57,12 @@
         public bool TwoFactorEnabled { get; set; }
 
         [JsonProperty("lockoutEnd")]
-        public object LockoutEnd { get; set; }
+        public DateTimeOffset? LockoutEnd { get; set; }
 
         [JsonProperty("lockoutEnabled")]
         public bool LockoutEnabled { get; set; }
 
         [JsonProperty("accessFailedCount")]
-        public long AccessFailedCount { get; set; }
+        public int AccessFailedCount { get; set; }
     }
 }

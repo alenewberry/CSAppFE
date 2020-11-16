@@ -5,10 +5,10 @@
     public class Client
     {
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public int Id { get; set; }
 
         [JsonProperty("cuit")]
-        public long Cuit { get; set; }
+        public string Cuit { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
